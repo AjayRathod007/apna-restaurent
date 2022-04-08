@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-import base_url from "../api/BootApi";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 const AllItems=()=>{
 
     const [items,setItems]=useState([])
+    let location = useLocation();
 
     useEffect(()=>{
         document.title = "All ITEMS"
@@ -16,7 +17,7 @@ const AllItems=()=>{
     //function to call server:
 
     const getAllItemsFromServer=()=>{
-        axios.get('/items').then(
+        axios.get('/menu/'+location.state.RestaurantId).then(
             (response)=>{
                 //sucess
                 console.log(response.data);
@@ -32,11 +33,6 @@ const AllItems=()=>{
             }
         );
     };
-// calling loading item function
-
-// useEffect(()=>{
-//     getAllItemsFromServer();
-// });
            
           const removeItemById=(itemId)=>{
               setItems(items.filter((c)=>c.itemId != itemId))

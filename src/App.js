@@ -17,7 +17,7 @@ import {
 import Login from './components/login';
 import Registration from './components/Registration';
 import Address from './components/Address';
-import AllRestaurant from './components/AllRestraurant';
+import AllRestaurant from './components/AllRestaurant';
 
 
 
@@ -47,6 +47,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/address" element={<Address/>}/>
             <Route path="/allrestaurant" element={<AllRestaurant/>}/>
+            <Route path="/allitems" element={<AllItems/>}/>
              {/* <Route path="/home" element={<Home/>} />
              <Route path="/add-item" element={<AddItem/>} exact/>
              <Route path="/view-items" element={<AllItems/>} exact/> */}

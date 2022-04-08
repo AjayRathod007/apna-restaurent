@@ -34,17 +34,26 @@ const AllRestaurant=()=>{
             }
         );
     };
-           
+    // const selectRestaurantById=(restaurantId)=>{
+    //     setRestaurant(restaurant.filter((c)=>c.restaurantId === restaurantId))
+    // }
     
     return(
         <div>
             <h3>total res {restaurant.length} All Restaurant of {location.state.Address} city</h3>
             {
-                restaurant.length>0 ? restaurant.map((res)=><Restaurant key={res.restaurantId} restaurant={res}/> ): "NO Restaurant"
+                restaurant.length>0 ? restaurant.map((res)=><Restaurant key={res.restaurantId} restaurant={res} /> ): "NO Restaurant"
             } 
         </div>
 
     )
 }
+// git remote add origin git@github.com:AjayRathod007/apnaRestaurent.git
+
+// https://github.com/AjayRathod007/Wallet-ApplicationC
+
+// git remote set-url origin https://github.com/AjayRathod007/apna-restaurent
+
+// git remote set-url origin https://github.com/AjayRathod007/Restraurent-Respository
 
 export default AllRestaurant;
