@@ -7,8 +7,9 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
 import AllItems from './components/AllItems'
-import AddItem from './components/AddItem';
-import Menus from './components/Menus';
+
+import CartHeader from './components/CartHeader';
+import CartItem from './components/CartItem';
 import {
     BrowserRouter as Router,
   Route,
@@ -18,16 +19,12 @@ import Login from './components/login';
 import Registration from './components/Registration';
 import Address from './components/Address';
 import AllRestaurant from './components/AllRestaurant';
-
+import OrderCon from './components/OrderCon';
 
 
 
 function App() {
-  const btnHandle =()=>{
-    toast.error("done",{
-      position: "top-center",
-    });
-  };
+
   return (
     <div>
       <Router>
@@ -35,27 +32,23 @@ function App() {
      
     <Container>
       <Header/>
-      {/* <Row>
-        <Col md={4}>
-          { <Menus/> }
-        </Col>
-        <Col md={8}> */}
           <Routes>
 
-            <Route path="/" element={<Home/>}/>
-            <Route path="/signup" element={<Registration/>}/>
-            <Route path="/login" element={<Login/>} />
-            <Route path="/address" element={<Address/>}/>
-            <Route path="/allrestaurant" element={<AllRestaurant/>}/>
-            <Route path="/allitems" element={<AllItems/>}/>
-             {/* <Route path="/home" element={<Home/>} />
-             <Route path="/add-item" element={<AddItem/>} exact/>
-             <Route path="/view-items" element={<AllItems/>} exact/> */}
-
-          </Routes>
+            <Route path="/" element={<Home/>} exact/>
+            <Route path="/signup" element={<Registration/>}exact/>
+            <Route path="/login" element={<Login/>} exact/>
+            <Route path="/address" element={<Address/>}exact/>
+           
+            <Route path="/allrestaurant" element={ <AllRestaurant />}exact/>
+            
+            <Route path="cartheader" element={<CartHeader/>}exact/>
+            
+            <Route path="/allitems" element={<AllItems/>}exact/>
+            <Route path="/cartitem" element={<CartItem/>}exact/>
+            <Route path="/orderinit" element={<OrderCon/>}exact/>
           
-         {/* </Col>
-      </Row> */}
+          </Routes>
+      
     </Container>
       </Router>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 
 import{
     Card,
@@ -12,45 +12,72 @@ import{
 
 } from "reactstrap";
 
-import axios from "axios";
-import base_url from "../api/BootApi";
-import { toast } from "react-toastify";
 
+const Item=( props)=>{
 
-const Item=({ item,remove })=>{
+    return(
+    <div className="row mt-3">
+      <div className="col-5">
+        <h2>
+          {props.item.itemName}
+          <span className="badge bg-secondary">₹{props.item.itemPrice}</span>
+        </h2>
+      </div>
+      <div className="col-3">
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic mixed styles example"
+        >
+          <button
+            type="button"
+            class="btn btn-danger"
+            onClick={() => {
+              props.decrementQuantity(props.index);
+            }}
+          >
+            -
+          </button>
+          <button type="button" class="btn btn-warning">
+            {props.item.quantity}
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            onClick={() => {
+              props.incrementQuantity(props.index);
+            }}
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div className="col-2">
+        {props.item.quantity * props.item.itemPrice}
+      </div>
 
-    const deleteItem=(itemId)=>{
-        axios.delete(`${base_url}/items/${itemId}`).then(
-            (response)=>{
-                console.log(response);
-                console.log("success");
-                toast.success("item deleted successfully");
-                remove(itemId);
-
-            },(error)=>{
-                console.log(error);
-                toast.error("item not deleted !! server problem");
-            }
-        )
-
-
-    }
-    return (
-        <Card className="text-center">
-            <CardBody>
-                <CardSubtitle className="font-weight-bold">{item.itemName}</CardSubtitle>
-                <CardText>{item.itemPrice}</CardText>
-                <Container className="text-center">
-                    <Button className="btn btn-danger" onClick={()=>{
-                        deleteItem(item.itemId);
-                    }}>DELETE</Button>
-
-                    <Button className="btn btn-warning ml-3 " >ADD CART</Button>
-                </Container>
-            </CardBody>
-        </Card>
-    )
-
+      </div>
+    );
 }
 
 export default Item;
+
+
+    
+    
+    // return (
+    //     <Card className="text-center">
+    //         <CardBody>
+    //             <CardSubtitle className="font-weight-bold">{item.itemName}</CardSubtitle>
+    //             <CardText>{item.itemPrice}</CardText>
+    //             <Container className="text-center">
+    //                 <Button className="btn btn-danger" onClick={()=>{
+    //                     deleteItem(item.itemId);
+    //                 }}>DELETE</Button>
+
+    //                 <Button className="btn btn-warning ml-3 " onClick={AddItem} >add Item</Button>
+    //             </Container>
+    //         </CardBody>
+    //     </Card>
+    // )
+

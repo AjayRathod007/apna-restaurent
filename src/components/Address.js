@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const Address=()=>{
@@ -16,15 +14,6 @@ const addressHandler=(e)=>{
 
 const submit=(e)=>{
 
-    // axios.get('/address/'+address).then(
-    //     (response)=>{
-    //         console.log(response.data)
-    //         setRestaurent(response.data)
-    //     },(error)=>{
-    //         console.log(error);
-    //         toast.error("something went wrong");
-    //     }
-    // )
    navigate('/allrestaurant', { state: { Address : address}} );
   
 }

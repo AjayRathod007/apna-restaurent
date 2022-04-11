@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import{
   Card,
@@ -22,11 +21,11 @@ console.log(restaurant.restaurantId)
      axios.get('/menu/'+restaurant.restaurantId).then(
        (reponse)=>{
          console.log(reponse.data)
-         toast.success(" restaurant item loaded successfully");
+        
          
        },(error)=>{
          console.log(error);
-         toast.error("something went wrong");
+        
       }
      )
     console.log(restaurant.restaurantId)

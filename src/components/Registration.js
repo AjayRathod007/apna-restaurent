@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 
@@ -23,7 +22,7 @@ const Registration=()=>{
  
          },(error)=>{
              console.log(error);
-             toast.error("item not deleted !! server problem");
+             
          })
 
          navigate('/login');

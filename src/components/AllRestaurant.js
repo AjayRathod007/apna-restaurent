@@ -40,11 +40,13 @@ const AllRestaurant=()=>{
     
     return(
         <div>
-            <h3>total res {restaurant.length} All Restaurant of {location.state.Address} city</h3>
+            <h3>  {restaurant.length} Restaurant are avaiable in {location.state.Address} city</h3>
             {
                 restaurant.length>0 ? restaurant.map((res)=><Restaurant key={res.restaurantId} restaurant={res} /> ): "NO Restaurant"
-            } 
+            }
         </div>
+
+
 
     )
 }

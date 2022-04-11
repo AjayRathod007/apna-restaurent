@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Button, Container, Form, FormGroup, Input } from "reactstrap";
 import axios from "axios";
-import base_url from "../api/BootApi";
 import { toast } from "react-toastify";
 
 const AddItem=()=>{  

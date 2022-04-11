@@ -25,10 +25,6 @@ const Home=()=>{
             {/* <Link className="list-group-item list-group-item-action"  to="#!" action>Contact Us</Link> */}
          </ListGroup>
        </Container>
-
-                {/* <Container>
-                    <Button color="primary" outline>start using</Button>
-                </Container> */}
             </jumbotron>
         </div>
     )
