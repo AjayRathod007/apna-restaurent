@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Login=()=>{
     const [userLogin,setUserLogin]=useState({});
     let navigate= useNavigate();
@@ -10,25 +11,28 @@ const Login=()=>{
        axios.post('/login/',userLogin).then(
         (response)=>{
             console.log(response)
-            console.log(response.data[0].statusCode);
-            if(response.data[0].statusCode===200){
-                localStorage.setItem('userInfo',JSON.stringify(response.data[0].res));
-                console.log(response.data[0].res); 
+            console.log(response.data.statusCode);
+              if(response.data.statusCode===200){
+                localStorage.setItem('userInfo',JSON.stringify(response.data.res));
+                console.log(response.data.res); 
+                navigate('/Address');
                 //use redirect code
             }else{
-                console.log('Oops something went wrong!');
+                console.error('INVALID LOGIN DETAILS');
+                toast("INVALID USER LOGIN DETAILS")
             }
-          
 
         },(error)=>{
             console.log(error);
             
         });
         
-        navigate('/Address');
     }
+
+
     const setVal=(e)=>{
         setUserLogin({...userLogin,[e.target.name]:e.target.value})
+        //setPass(e,targert);
     }
     
     return (
@@ -36,7 +40,7 @@ const Login=()=>{
             <form action="#">
         <div className="mb-3">
           <label htmlFor="Enter name here" className="form-label">phoneNumber</label>
-          <input onChange={setVal} type="number" name="phoneNumber" className="form-control" id="number" max="10" placeholder="enter phoneNumber here" required/>
+          <input onChange={setVal} type="number" name="phoneNumber"  className="form-control" id="number" max="10" placeholder="enter phoneNumber here" required/>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">Password</label>

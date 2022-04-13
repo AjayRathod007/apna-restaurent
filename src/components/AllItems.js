@@ -7,7 +7,7 @@ import Footer from "./Footer";
 const AllItems=()=>{
 
     let [totalAmount, setTotalAmount] = useState(0);
-    const [cardData,setCartData]=useState({});
+    
     const userInfo=JSON.parse(localStorage.getItem('userInfo'));
    // const phoneNumber=userInfo[].phoneNumber;
     const [items,setItems]=useState([])
@@ -27,8 +27,6 @@ const AllItems=()=>{
       newTotalAmount += newItemList[index].itemPrice;
       setTotalAmount(newTotalAmount);
       setItems(newItemList);
-     // const itemListData=newItemList[index];
-     // setCartData({...cardData,index:itemListData});
     };
   
     const decrementQuantity = (index) => {
@@ -72,20 +70,15 @@ const AllItems=()=>{
     return ( 
     <div>
     
-       { items.length > 0 ?
-        (
-            items.map((item, i) => {
-          return (
-               <Item
+       { items.length > 0 ? items.map((item, i) => <Item
                 item={item}
                 key={i}
                 incrementQuantity={incrementQuantity}
                 index={i}
                 decrementQuantity={decrementQuantity}
-        />
-      );
-    }) 
-  ) :(<h1>No items found</h1>)}
+                />
+    )
+     :(<h1>No items found</h1>)}
   
       <div>
       <Footer  totalAmount={totalAmount} newItemList={items} resetQuantity = {resetQuantity}/> 
@@ -95,20 +88,3 @@ const AllItems=()=>{
 }
 
 export default AllItems;
-
-
-
-
-
-
-/* //  NOTE :- BEFORE CHANGE
-        // <div>
-        //     <h1>All ITEMS</h1>
-        //     <p>list of item are as follows</p>
-        //     {
-        //         items.length>0 ? items.map((menu)=><Item key={menu.itemId} item={menu}  remove={removeItemById}/>):"NO ITEMS"
-        //     }
-        // </div> */
-//   const removeItemById=(itemId)=>{
-        //       setItems(items.filter((c)=>c.itemId != itemId))
-        //   }

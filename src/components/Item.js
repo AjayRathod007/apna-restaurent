@@ -11,12 +11,16 @@ import{
     Container,
 
 } from "reactstrap";
+import UserLoginDetails from "./UserLoginDetails";
 
 
 const Item=( props)=>{
 
     return(
+
+      
     <div className="row mt-3">
+      <UserLoginDetails/>
       <div className="col-5">
         <h2>
           {props.item.itemName}
@@ -62,22 +66,4 @@ const Item=( props)=>{
 
 export default Item;
 
-
-    
-    
-    // return (
-    //     <Card className="text-center">
-    //         <CardBody>
-    //             <CardSubtitle className="font-weight-bold">{item.itemName}</CardSubtitle>
-    //             <CardText>{item.itemPrice}</CardText>
-    //             <Container className="text-center">
-    //                 <Button className="btn btn-danger" onClick={()=>{
-    //                     deleteItem(item.itemId);
-    //                 }}>DELETE</Button>
-
-    //                 <Button className="btn btn-warning ml-3 " onClick={AddItem} >add Item</Button>
-    //             </Container>
-    //         </CardBody>
-    //     </Card>
-    // )
 

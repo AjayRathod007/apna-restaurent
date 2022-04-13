@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import UserLoginDetails from "./UserLoginDetails";
+import LogOUt from "./LogOUt";
 
 const Address=()=>{
 const [address, setAddress]=useState({});
-const [restaurent,setRestaurent]=useState([]);
 let navigate= useNavigate();
 
 
@@ -19,6 +20,13 @@ const submit=(e)=>{
 }
     return(
         <div>
+              
+              <UserLoginDetails/>
+            
+              <LogOUt/>
+                
+              
+
             <form >
         
           <label htmlFor="address" className="form-label">Address</label>

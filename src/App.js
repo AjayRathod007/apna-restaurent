@@ -20,7 +20,8 @@ import Registration from './components/Registration';
 import Address from './components/Address';
 import AllRestaurant from './components/AllRestaurant';
 import OrderCon from './components/OrderCon';
-
+import UserLoginDetails from './components/UserLoginDetails';
+import LogOUt from './components/LogOUt';
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
             <Route path="/allitems" element={<AllItems/>}exact/>
             <Route path="/cartitem" element={<CartItem/>}exact/>
             <Route path="/orderinit" element={<OrderCon/>}exact/>
-          
+            <Route path="/userLogin" element={<UserLoginDetails/>}exact/>
+            <Route path="/logout" element={<LogOUt/>}exact/>
           </Routes>
       
     </Container>

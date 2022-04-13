@@ -12,6 +12,7 @@ import{
   Container,
 
 } from "reactstrap";
+import UserLoginDetails from './UserLoginDetails';
 
 
 const Restaurant = ({restaurant}) => {
@@ -33,6 +34,7 @@ console.log(restaurant.restaurantId)
   }
   return (
     <div>
+      
     <Card className="text-center">
             <CardBody>
                 <CardSubtitle className="font-weight-bold">{restaurant.name}</CardSubtitle>
