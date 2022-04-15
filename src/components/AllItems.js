@@ -69,7 +69,7 @@ const AllItems=()=>{
            
     return ( 
     <div>
-    
+      
        { items.length > 0 ? items.map((item, i) => <Item
                 item={item}
                 key={i}

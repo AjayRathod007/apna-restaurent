@@ -23,6 +23,9 @@ import OrderCon from './components/OrderCon';
 import UserLoginDetails from './components/UserLoginDetails';
 import LogOUt from './components/LogOUt';
 
+import { Link } from 'react-router-dom';
+import HeaderHendler from './components/HeaderHendler';
+
 
 function App() {
 
@@ -31,15 +34,16 @@ function App() {
       <Router>
       <ToastContainer/>
      
-    <Container>
+         <Container>
       <Header/>
+                   
           <Routes>
 
             <Route path="/" element={<Home/>} exact/>
             <Route path="/signup" element={<Registration/>}exact/>
             <Route path="/login" element={<Login/>} exact/>
             <Route path="/address" element={<Address/>}exact/>
-           
+            <Route path="/header" element={<HeaderHendler/>}exact/>
             <Route path="/allrestaurant" element={ <AllRestaurant />}exact/>
             
             <Route path="cartheader" element={<CartHeader/>}exact/>
