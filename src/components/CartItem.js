@@ -68,9 +68,9 @@ return (
     <CartHeader/>
     <div>
     <div className='userId '  >
-    <h3>USERID:{phoneNumber} </h3></div>
+    <h3>USERID: { phoneNumber } </h3></div>
     <div className='restaurantId'>
-      <h3>RESTAURANTID : {resId}</h3>
+      <h3>RESTAURANTID : { resId }</h3>
       
     </div>
     </div>

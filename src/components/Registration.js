@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 const Registration=()=>{
 
     const [userSignUp,setUserSignUp]=useState({});
+
+
+    
     let navigate =  useNavigate();
     const signUp=(e)=>{
         e.preventDefault();

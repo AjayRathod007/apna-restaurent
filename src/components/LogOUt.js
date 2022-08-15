@@ -1,12 +1,17 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function LogOUt() {
+  const navigate=useNavigate();
+  const logout=()=>{
+    localStorage.clear();
+    navigate('/');
+  } 
     
   return (
     <div>
-        <Link className="list-group-item list-group-item-action"  to="/logout" > LOGOUT</Link>
+        <button className="list-group-item list-group-item-action" onClick={logout}  > LOGOUT</button>
     </div>
   )
 }

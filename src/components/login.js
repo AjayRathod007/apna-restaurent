@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const Login=()=>{
     const [userLogin,setUserLogin]=useState({});
-    let navigate= useNavigate();
+    //let navigate= useNavigate();
 
     const onLogin=(e)=>{
        e.preventDefault();
@@ -15,11 +15,11 @@ const Login=()=>{
               if(response.data.statusCode===200){
                 localStorage.setItem('userInfo',JSON.stringify(response.data.res));
                 console.log(response.data.res); 
-                navigate('/Address');
+                window.location.href='/Address';
                 //use redirect code
             }else{
                 console.error('INVALID LOGIN DETAILS');
-                toast("INVALID USER LOGIN DETAILS")
+                toast("INVALID USER LOGIN DETAILS ")
             }
 
         },(error)=>{

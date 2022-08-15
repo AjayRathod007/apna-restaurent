@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Restaurant from "./Restaurant";
-import base_url from "../api/BootApi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
@@ -19,11 +18,12 @@ const AllRestaurant=()=>{
     //function to call server:
 
      const getAllRestaurantFromServer=()=>{
+
         axios.get('/address/'+location.state.Address).then(
             (response)=>{
                 //sucess
                 console.log(response.data);
-                toast.success("restaurants have been loaded");
+            
                 setRestaurant(response.data)
 
             },
